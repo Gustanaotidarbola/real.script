@@ -1,34 +1,41 @@
-const precos={ //dicionario
-    "parafuso":19.90,
-    "martelo":23.70,
-    "chave de fenda": 10.99,
-    "serrote":30.00,
+// Definindo os estoques iniciais para os produtos
+const estoques = {
+    'parafuso': 100,
+    'martelo': 50,
+    'chave de fenda': 75,
+    'serrote': 30
 };
 
-const estoque={
-    "parafuso": 100,
-    "martelo":4,
-    "chave de fenda": 6,
-    "serrote":1000,
+const precos = {
+    'parafuso': 1.50, // preço por unidade
+    'martelo': 10.00,
+    'chave de fenda': 8.00,
+    'serrote': 15.00
 };
 
-//ACESSAR GUARDAR A QUANTIDAde
-//calcular o preço total 
-function calcularPreco(){
+// Função para atualizar o estoque e calcular o preço
+function calcularPreco() {
+    const produtoSelecionado = document.getElementById("produto").value;
+    const quantidade = parseInt(document.getElementById("quantidade").value);
 
-    let qtd = document.getElementById("quantidade").value;// pega aquantidade atual digitada 
-    let escolha = document.getElementById("produto").value;//pega o nome do produto selecionado 
-    let valortotal = qtd * precos[escolha] // calcular o valor total multiplicando o preço do produto pela quantidade
-    //DECISAO
-    //pra ve o que tem no estoque 
-    if(estoque[escolha] - qtd >= 0){
-        document.getElementById("resultado").innerHTML = valortotal.toFixed(2); //exibir o resultado 
-        estoque[escolha] -= qtd; // calculo do estoque pra quando for tirando
-        window.alert("compra realizada com sucesso "  + "valor total: " + valortotal.toFixed(2))
-         
-    // aparece a mensagem na tela se não tive mais nada no estoque 
-    }else{
-        window.alert("ESTOQUE INDISPONIVEL")
+    if (!produtoSelecionado || isNaN(quantidade) || quantidade <= 0) {
+        alert("Por favor, selecione um produto e insira uma quantidade válida.");
+        return;
     }
-    console.log(estoque[escolha])
+
+    // Verifica se o estoque é suficiente
+    if (quantidade > estoques[produtoSelecionado]) {
+        alert("Quantidade excede o estoque disponível.");
+        return;
+    }
+
+    // Atualiza o estoque
+    estoques[produtoSelecionado] -= quantidade;
+
+    // Calcula o preço total
+    const precoTotal = precos[produtoSelecionado] * quantidade;
+
+    // Atualiza o estoque visível e o resultado da compra
+    document.getElementById("estoque").textContent = `Estoque restante de ${produtoSelecionado}: ${estoques[produtoSelecionado]}`;
+    document.getElementById("resultado").textContent = `Preço total: R$ ${precoTotal.toFixed(2)}. Estoque atualizado: ${estoques[produtoSelecionado]} unidades restantes.`;
 }

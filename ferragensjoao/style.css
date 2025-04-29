@@ -1,0 +1,100 @@
+/* Resetando alguns estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilo para o título */
+h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o rótulo de 'produtos' e 'quantidade' */
+label {
+    font-size: 1.1em;
+    color: #34495e;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilo para o select de produtos */
+select, input[type="number"] {
+    font-size: 1em;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+}
+
+/* Estilo para o botão */
+button {
+    background-color: #27ae60;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2ecc71;
+}
+
+/* Estilo para o campo de exibição do estoque */
+h5 {
+    font-size: 1.1em;
+    color: #e74c3c;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o campo de exibição do preço */
+h4 {
+    font-size: 1.3em;
+    color: #2980b9;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Adicionando uma borda e centralizando o formulário */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+/* Estilo para o aviso de erro */
+.alert {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
