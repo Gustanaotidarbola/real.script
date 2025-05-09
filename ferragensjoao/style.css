@@ -98,3 +98,10 @@ form {
     margin-bottom: 20px;
     text-align: center;
 }
+
+.tudo{
+    display: flex;
+    flex-direction: column;
+    border-color: #27ae60;
+    
+}

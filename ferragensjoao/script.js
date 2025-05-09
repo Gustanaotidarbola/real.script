@@ -37,5 +37,7 @@ function calcularPreco() {
 
     // Atualiza o estoque visível e o resultado da compra
     document.getElementById("estoque").textContent = `Estoque restante de ${produtoSelecionado}: ${estoques[produtoSelecionado]}`;
-    document.getElementById("resultado").textContent = `Preço total: R$ ${precoTotal.toFixed(2)}. Estoque atualizado: ${estoques[produtoSelecionado]} unidades restantes.`;
+    document.getElementById("estoqueAtualizado").textContent = `Preço total: R$ ${precoTotal.toFixed(2)}`;
+    alert("ADD COM SUCESSO")
+    
 }
